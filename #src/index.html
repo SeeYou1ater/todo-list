@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-List</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <div class="container">
+        <section class="todo__logo"><h1>To Do List</h1></section>
+        <section class="addform">
+            <div class="addform__title title"><h2>Add Task...</h2></div>
+            <input class="addform__input" id="input-field" maxlength="25" placeholder="Enter the task here..." type="text">
+            <button class="addform__button"><p>Add +</p></button>
+            <div class="desc_for_input"><p>* Maximum - 25 symbols</p></div>
+        </section>
+        <section class="todo-list">
+            <h2 class="todo-list__title title">All tasks</h2>
+            <ul class="todo-list__items">
+                
+            </ul>
+            <div class="todo-list__buttons">
+                <button class="todo-list__btn important-tasks"><p>Show important tasks</p></button>
+                <button class="todo-list__btn delete-all-btn"><p>Delete all</p></button>
+                <button class="todo-list__btn delete-selected-btn"><p>Delete selected</p></button>
+                <button class="todo-list__btn all-tasks-btn btn-hide"><p>Show all tasks</p></button>
+            </div>
+        </section>
+    </div> 
+<script src="js/main.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,329 @@
+@import "_reset";
+@import "_libs";
+@import "_vars";
+@import "_fonts";
+
+
+body {
+    min-height: 100vh;
+    background: url('../images/background-image.jpg');
+    background-size: auto;
+    font-family: Bebas-Neue, Bebas-Neue-Cyr, sans-serif;
+    overflow: scroll;
+    font-weight: 300;
+    font-size: 14px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.container{
+    max-width: 1230px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 20px auto 20px;
+}
+
+.todo__logo {
+    font-family: Hurricane, sans-serif;
+    font-size: 70px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px red, 0 0 1em red, 0 0 0.2em red;
+}
+
+.addform{
+    max-width: 550px;
+    padding: 20px 20px 10px 20px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 1);
+    margin: 0 auto 15px;
+}
+
+.todo-list {
+    margin: 0 auto;
+    max-width: 550px;
+    padding: 20px 20px 10px 20px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 1);
+}
+
+.addform__input{
+    border-radius: 20px;
+    padding: 6px 20px 3px 20px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    font-size: 24px;
+    width: 71%;
+    margin-right: 3%;
+    line-height: 1.4;
+}
+
+.addform__input:focus{
+    box-shadow: inset 0px 0px 10px 0px rgba(92, 49, 0, 1); 
+}
+
+.addform__button{
+    padding: 6px 20px 3px 20px;
+    width: 25%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    font-size: 24px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 1);
+    transition: all 0.2s;
+    line-height: 1.4;
+}
+
+.desc_for_input {
+    display: block;
+    margin-top: 10px;
+}
+
+.addform__button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1); 
+}
+
+.addform__button:active{
+    transform: scale(0.9);
+}
+
+.title {
+    font-family: Hurricane, sans-serif;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    margin-bottom: 20px;
+}
+
+.favorite-task-icon {
+    position: absolute;
+    display: inline-block;
+    background: url('../images/favorite-icon.png') no-repeat;
+    background-size: cover;
+    top: 5px;
+    left: 8px;
+    width: 26px;
+    height: 26px;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+
+.todo-list__item {
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    padding: 6px 20px 4px 42px;
+    position: relative;
+    overflow: hidden;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.checkbox__input:checked + .checkbox::before{
+    content: '';
+    background: url('../images/check.png') no-repeat;
+    position: absolute;
+    display: inline-block;
+    background-size: cover;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;  
+}
+
+label {
+    position: relative;
+}
+
+.checkbox {
+    cursor: pointer;
+    position: absolute;
+    display: inline-block;
+    left: -33px;
+    width: 26px;
+    height: 26px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+
+.todo-list__item:hover {
+    .todo-list__delete-btn{
+        opacity: 0.9;
+    }
+    .todo-list__favorite-btn{
+        opacity: 0.9
+    }
+}
+
+.todo-list__favorite-btn {
+    opacity: 0;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10%;
+    right: 10%;
+    transition: all 0.5s;
+    padding-top: 3px;
+}
+
+.checkbox-favorite {
+    cursor: pointer;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url('../images/not-favorite.png') no-repeat;
+    background-size: cover;
+}
+
+.checkbox__input-fav:checked + .checkbox-favorite::before{
+    content: '';
+    background: url('../images/favorite.png') no-repeat;
+    display: inline-block;
+    background-size: cover;
+    width: 22px;
+    height: 22px;
+}
+
+.todo-list__delete-btn{
+    opacity: 0;
+    background-color: rgb(255, 0, 0);
+    border-radius: 0 20px 20px 0;
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 10%;
+    right: 0;
+    transition: all 0.5s;
+}
+
+.todo-list__delete-btn::before {
+    content: '';
+    background: url('../images/del.png') no-repeat;
+    position: absolute;
+    background-size: cover;
+    top: 19%;
+    right: 7%;
+    left: 0;
+    margin: auto;
+    width: 22px;
+    height: 22px;
+}
+
+.todo-list__delete-btn:active {
+    transform: scale(0.8);
+}
+
+.todo-list__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.todo-list__btn{
+    padding: 6px 20px 3px 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    font-size: 24px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 1);
+    transition: all 0.2s;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.todo-list__btn:active{
+    transform: scale(0.9);
+}
+
+.todo-list__btn:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 1); 
+}
+
+.important-tasks {
+    display: block;
+    width: 100%;
+}
+
+.delete-all-btn {
+    margin-left: 4%;
+    margin-right: 3%;
+    min-width: 40%;
+}
+
+.delete-selected-btn {
+    min-width: 40%;
+    margin-right: 5%;
+}
+
+.important-tasks.btn-hide {
+    display: none;
+}
+
+.delete-all-btn.btn-hide {
+    display: none;
+}
+
+.delete-selected-btn.btn-hide{
+    display: none;
+}
+
+.all-tasks-btn.btn-hide{
+    display: none;
+}
+
+@media (max-width: 420px){
+    .todo-list__btn{
+        line-height: 1.2;
+    }
+    .delete-all-btn {
+        min-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    .delete-selected-btn{
+        min-width: 100%;
+        margin-right: 0;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    .addform__button {
+        line-height: 1.2;
+        margin-top: 15px;
+        width: 100%;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    .addform__input {
+        margin-top: -5px;
+        width: 100%;
+    }
+    .all-tasks-btn {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    .important-tasks {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    .todo-list__delete-btn {
+        width: 13%;
+    }
+    .todo-list__favorite-btn {
+        right: 13%;
+        width: 13%;
+    }
+}
